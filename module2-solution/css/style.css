@@ -1,0 +1,73 @@
+body{
+  font-family: Arial, Helvetica, serif;
+  padding: 0;
+  margin: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  font-size: 1.75em;
+}
+
+.items{
+  padding-left: 17px;
+}
+
+.items-item{
+  width: calc(33.3% - 17px);
+  border: 1px solid #000;
+  float: left;
+  margin-right: 17px;
+  padding: 40px 13px 6px 13px;
+  position: relative;
+}
+
+.items-item__title{
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  font-size: 1.25em;
+  background-color: #d59898; 
+  border: 1px solid #000;
+  width: 150px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.items-item__description{
+  margin: 0
+}
+
+.items-item--beef .items-item__title{
+  background-color: #c14543;
+  color: #fff;
+}
+
+.items-item--sushi .items-item__title{
+  background-color: #e5d198;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .items-item--beef,
+  .items-item--chicken{
+    width: calc(50% - 17px);
+  }
+
+  .items-item--sushi{
+    width: calc(100% - 17px);
+    margin-top: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .items-item--beef,
+  .items-item--chicken,
+  .items-item--sushi{
+    width: calc(100% - 17px);
+    margin-bottom: 19px;
+  }
+}
