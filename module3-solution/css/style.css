@@ -1,0 +1,10 @@
+.navbar-default .navbar-collapse li.active a,
+.navbar-default .navbar-collapse li.active a:hover,
+.navbar-default .navbar-collapse li a:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.content{
+  background-color: #ccc;
+}
