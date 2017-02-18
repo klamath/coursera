@@ -7,8 +7,8 @@
 // See Lecture 52, part 1
 
 // DO NOT attach the speakWord variable to the 'helloSpeaker' object.
-var helloSpeaker = {};
-(function(){
+(function(global){
+  var helloSpeaker = {};
   var speakWord = "Hello";
 
 
@@ -24,4 +24,5 @@ var helloSpeaker = {};
   // See Lecture 52, part 2
   // (Note, Step 6 will be done in the SpeakGoodBye.js file.)
   // xxxx.xxxx = helloSpeaker;
-})();
+  global.helloSpeaker = helloSpeaker
+})(window);
