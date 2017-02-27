@@ -14,14 +14,12 @@
     ctrl.search = function(){
       if (this.searchTerm != '') {
         MenuSearchService.getMatchedMenuItems(this.searchTerm).then(function (result) {
-          console.log('RESULT: ', result);
           ctrl.found = result
         });
       }
       else {
         console.log('Please prvide search criteria');
       }
-      console.log('search result: ', ctrl.found);
     };
 
     ctrl.onRemove = function(index){
