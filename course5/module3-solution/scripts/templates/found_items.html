@@ -1,0 +1,15 @@
+<h2 class="clearfix">Found items: {{items.length}}</h2>
+<h3 ng-show='items.length === 0'>Nothing found</h3>
+<table ng-show='items.length' class='table'>
+  <th>
+    <td>Name:</td>
+    <td>Short name:</td>
+    <td>Description:</td>
+  </th>
+  <tr ng-repeat='item in items'>
+    <td>{{item.name}}</td>
+    <td>{{item.short_name}}</td>
+    <td>{{item.description}}</td>
+    <td><button type="button" name="button" ng-click='removeItem({index: $index})'>Don't want this one!</button></td>
+  </tr>
+</table>
