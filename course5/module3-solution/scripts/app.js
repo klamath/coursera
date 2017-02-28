@@ -12,14 +12,9 @@
     ctrl.found = [];
     ctrl.searchTerm = '';
     ctrl.search = function(){
-      if (this.searchTerm != '') {
-        MenuSearchService.getMatchedMenuItems(this.searchTerm).then(function (result) {
-          ctrl.found = result
-        });
-      }
-      else {
-        console.log('Please prvide search criteria');
-      }
+      MenuSearchService.getMatchedMenuItems(this.searchTerm).then(function (result) {
+        ctrl.found = result
+      });
     };
 
     ctrl.onRemove = function(index){
