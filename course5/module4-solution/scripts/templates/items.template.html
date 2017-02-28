@@ -1,0 +1,7 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="home">Home</a></li>
+  <li><a ui-sref="categoriesList">Categories</a></li>
+  <li class="active">{{itemsCtrl.category.category.name}} ({{itemsCtrl.category.category.short_name}})</li>
+</ol>
+<h2>Items of category {{itemsCtrl.category.category.name}}</h2>
+<items items='itemsCtrl.category.menu_items'></items>

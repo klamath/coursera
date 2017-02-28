@@ -1,0 +1,9 @@
+<div class='categories'>
+  <div class='category' ng-repeat='item in $ctrl.items'>
+    <h3 class='category__title'>{{item.name}} ({{item.short_name}})</h3>
+    <div class="category__description" ng-if='item.special_instructions'>
+      {{item.special_instructions}}
+    </div>
+    <a ui-sref="itemsList({name: item.short_name})" class='category__details'>View items</a>
+  </div>
+</div>

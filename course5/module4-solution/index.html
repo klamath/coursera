@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Menu browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body ng-app='MenuApp'>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Chinese restaurant</h1>
+    </div>
+    <ui-view></ui-view>
+  </div>
+  <!-- libs -->
+  <script type="text/javascript" src='./scripts/lib/angular.min.js'></script>
+  <script type="text/javascript" src='./scripts/lib/angular-ui-router.js'></script>
+
+  <script type="text/javascript" src='./scripts/data.module.js'></script>
+  <script type="text/javascript" src='./scripts/menuapp.module.js'></script>
+
+  <script src="./scripts/config/routes.js" charset="utf-8"></script>
+
+  <script src="./scripts/components/categories.component.js" charset="utf-8"></script>
+  <script src="./scripts/components/items.component.js" charset="utf-8"></script>
+
+
+  <script src="./scripts/controllers/categories_list.controller.js" charset="utf-8"></script>
+  <script src="./scripts/controllers/items_list.controller.js" charset="utf-8"></script>
+
+  <script src="./scripts/services/menudata.service.js" charset="utf-8"></script>
+</body>
+</html>
