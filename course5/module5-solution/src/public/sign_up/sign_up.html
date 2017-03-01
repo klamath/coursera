@@ -1,0 +1,52 @@
+<div class="container">
+  <h2 class="text-center">Subscribe</h2>
+  <div class="row">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form name='user' novalidate>
+        <div class="form-group">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" name='firstName' placeholder="First name" ng-model='signUpCtrl.user.firstName' required="true">
+          <div class="form__field-error" ng-if='user.phone.$error.required && user.phone.$touched'>
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" name='lastName' placeholder="Last name" ng-model='signUpCtrl.user.lastName' required="true">
+          <div class="form__field-error" ng-if='user.phone.$error.required && user.phone.$touched'>
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name='email' id="email" ng-model='signUpCtrl.user.email' required="true">
+          <div class="form__field-error" ng-if='user.phone.$error.required && user.phone.$touched'>
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" name='phone' id="phone" ng-model='signUpCtrl.user.phone' required="true">
+          <div class="form__field-error" ng-if='user.phone.$error.required && user.phone.$touched'>
+            This field is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dish">Favorite dish</label>
+          <input type="text" class="form-control" name='dish' id="dish"
+                  ng-model='signUpCtrl.user.dish' ng-blur='signUpCtrl.checkMenuItem()'
+                  ng-keyup='signUpCtrl.resetMenuItemValidation()'>
+          <p class="help-block">Short name of menu item. Ex.: A1</p>
+          <div class="form__field-error" ng-show='signUpCtrl.menuItemValid === false'>
+            No such menu number exists
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default" ng-click='signUpCtrl.saveUser()' ng-disabled='user.$invalid'>Submit</button>
+        <p class="help-block" ng-if='signUpCtrl.userSaved === true'>Your information has been saved</p>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
