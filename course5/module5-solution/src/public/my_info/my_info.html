@@ -1,0 +1,33 @@
+<div class="container">
+  <h2 class="text-center">Profile</h2>
+  <div class="row">
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <dl class="profile__data" ng-if="myInfoCtrl.user.firstName !== ''">
+        <dt>First name:</dt>
+        <dd>{{myInfoCtrl.user.firstName}}</dd>
+
+        <dt>Last name:</dt>
+        <dd>{{myInfoCtrl.user.lastName}}</dd>
+
+        <dt>Email:</dt>
+        <dd>{{myInfoCtrl.user.email}}</dd>
+
+        <dt>Phone:</dt>
+        <dd>{{myInfoCtrl.user.phone}}</dd>
+
+        <dt>Favorite dish:</dt>
+        <dd>
+          <menu-item menu-item="myInfoCtrl.user.menuItem"></menu-item>
+        </dd>
+
+      </dl>
+      <h3 ng-if="myInfoCtrl.user.firstName === ''">
+        Not Signed Up Yet.
+        <a ui-sref='public.signUp'>Sign up Now!</a>
+      </h3>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
