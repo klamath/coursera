@@ -10,15 +10,21 @@
    <div ng-controller='NarrowItDownController as formController' class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control" ng-model='formController.searchTerm'>
-    </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click='formController.search()'>Narrow It Down For Me!</button>
+    <div class="row">
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="text" placeholder="search term" class="form-control" ng-model='formController.searchTerm'>
+        </div>
+        <button class="btn btn-primary" ng-click='formController.search()'>Narrow It Down For Me!</button>
+      </form>
     </div>
 
-    <!-- found-items1 should be implemented as a component -->
-    <found-items class='clearfix' found-items="formController.found" on-remove="formController.onRemove(index);"></found-items>
+    <div class="row">
+      <h3 ng-if='formController.searchPerformed && formController.found.length == 0' class="clearfix">Nothing found</h3>
+      <!-- found-items1 should be implemented as a component -->
+      <found-items class='clearfix' found-items="formController.found" on-remove="formController.onRemove(index);"
+                    ng-if="formController.searchPerformed == true && formController.found.length > 0"></found-items>
+    </div>
   </div>
   <script type="text/javascript" src='./scripts/angular.min.js'></script>
   <script type="text/javascript" src='./scripts/app.js'></script>

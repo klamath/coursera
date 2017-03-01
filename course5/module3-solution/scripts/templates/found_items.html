@@ -1,12 +1,11 @@
 <h2 class="clearfix">Found items: {{items.length}}</h2>
-<h3 ng-show='items.length === 0'>Nothing found</h3>
 <table ng-show='items.length' class='table'>
-  <th>
-    <td>Name:</td>
-    <td>Short name:</td>
-    <td>Description:</td>
-    <td>&nbsp;</td>
-  </th>
+  <tr>
+    <th>Name:</th>
+    <th>Short name:</th>
+    <th>Description:</th>
+    <th>&nbsp;</th>
+  </tr>
   <tr ng-repeat='item in items'>
     <td>{{item.name}}</td>
     <td>{{item.short_name}}</td>

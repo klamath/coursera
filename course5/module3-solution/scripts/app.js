@@ -11,10 +11,19 @@
     var ctrl = this;
     ctrl.found = [];
     ctrl.searchTerm = '';
+    ctrl.searchPerformed = null;
     ctrl.search = function(){
-      MenuSearchService.getMatchedMenuItems(this.searchTerm).then(function (result) {
-        ctrl.found = result
-      });
+      ctrl.searchPerformed = false;
+      if(this.searchTerm !== ''){
+        MenuSearchService.getMatchedMenuItems(this.searchTerm).then(function (result) {
+          ctrl.searchPerformed = true;
+          ctrl.found = result;
+        });
+      }
+      else {
+        ctrl.searchPerformed = true;
+        ctrl.found = [];
+      }
     };
 
     ctrl.onRemove = function(index){
