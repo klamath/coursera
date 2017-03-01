@@ -43,7 +43,7 @@
             No such menu number exists
           </div>
         </div>
-        <button type="submit" class="btn btn-default" ng-click='signUpCtrl.saveUser()' ng-disabled='user.$invalid'>Submit</button>
+        <button type="submit" class="btn btn-default" ng-click='signUpCtrl.saveUser()' ng-disabled='user.$invalid || signUpCtrl.menuItemValid !== true'>Submit</button>
         <p class="help-block" ng-if='signUpCtrl.userSaved === true'>Your information has been saved</p>
       </form>
     </div>
